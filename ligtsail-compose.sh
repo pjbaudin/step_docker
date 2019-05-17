@@ -20,7 +20,7 @@ curl -o /srv/step_docker/Dockerfile-nginx https://raw.githubusercontent.com/pjba
 curl -o /srv/step_docker/app.conf https://raw.githubusercontent.com/pjbaudin/step_docker/master/app.conf
 curl -o /srv/step_docker/app.ini https://raw.githubusercontent.com/pjbaudin/step_docker/master/app.ini
 curl -o /srv/step_docker/app.py https://raw.githubusercontent.com/pjbaudin/step_docker/master/app.py
-curl -o /srv/step_docker/requirement.txt https://raw.githubusercontent.com/pjbaudin/step_docker/master/requirements.txt
+curl -o /srv/step_docker/requirements.txt https://raw.githubusercontent.com/pjbaudin/step_docker/master/requirements.txt
 
 # start up the application via docker-compose
 docker-compose -f /srv/step_docker/docker-compose.yml up -d
