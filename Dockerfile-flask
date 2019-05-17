@@ -1,0 +1,30 @@
+# Dockerfile-flask
+
+# Inherit the Python 3 image. This image does
+# not particularly care what OS runs underneath
+FROM python:3.6
+
+# Set an environment variable with the directory
+# where the app will be running
+ENV APP /app
+
+# Create the directory and instruct Docker to operate
+# from there from now on
+RUN mkdir $APP
+WORKDIR $APP
+
+# Expose the port uWSGI will listen on
+EXPOSE 5000
+
+# Copy the requirements file in order to install
+# Python dependencies
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install -r requirements.txt
+
+# Copy the rest of the codebase into the image
+COPY . .
+
+# Finally, run uWSGI with the ini file created earlier
+CMD [ "uwsgi", "--ini", "app.ini" ]
