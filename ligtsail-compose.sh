@@ -15,12 +15,12 @@ chmod +x /usr/local/bin/docker-compose
 # WorkingDirectory=[whatever you have below]
 mkdir /srv/step_docker
 curl -o /srv/step_docker/docker-compose.yml https://raw.githubusercontent.com/pjbaudin/step_docker/master/docker-compose.yml
-curl -o /srv/step_docker/docker-compose.yml https://raw.githubusercontent.com/pjbaudin/step_docker/master/Dockerfile-flask
-curl -o /srv/step_docker/docker-compose.yml https://raw.githubusercontent.com/pjbaudin/step_docker/master/Dockerfile-nginx
-curl -o /srv/step_docker/docker-compose.yml https://raw.githubusercontent.com/pjbaudin/step_docker/master/app.conf
-curl -o /srv/step_docker/docker-compose.yml https://raw.githubusercontent.com/pjbaudin/step_docker/master/app.ini
-curl -o /srv/step_docker/docker-compose.yml https://raw.githubusercontent.com/pjbaudin/step_docker/master/app.py
-curl -o /srv/step_docker/docker-compose.yml https://raw.githubusercontent.com/pjbaudin/step_docker/master/requirements.txt
+curl -o /srv/step_docker/Dockerfile-flask https://raw.githubusercontent.com/pjbaudin/step_docker/master/Dockerfile-flask
+curl -o /srv/step_docker/Dockerfile-nginx https://raw.githubusercontent.com/pjbaudin/step_docker/master/Dockerfile-nginx
+curl -o /srv/step_docker/app.conf https://raw.githubusercontent.com/pjbaudin/step_docker/master/app.conf
+curl -o /srv/step_docker/app.ini https://raw.githubusercontent.com/pjbaudin/step_docker/master/app.ini
+curl -o /srv/step_docker/app.py https://raw.githubusercontent.com/pjbaudin/step_docker/master/app.py
+curl -o /srv/step_docker/requirement.txt https://raw.githubusercontent.com/pjbaudin/step_docker/master/requirements.txt
 
 # start up the application via docker-compose
 docker-compose -f /srv/step_docker/docker-compose.yml up -d
